@@ -6,35 +6,49 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.Classroom;
-import model.UserAccount;
-public class Main extends Application {
-	private ClassroomGUI classroomGUI;
+
+public class Main extends Application{
+	
+	private ClassroomGUI classroomgui;
 	private Classroom classroom;
 
+	public Main() {
+		classroomgui = new ClassroomGUI(classroom);
+		classroom = new Classroom();
+	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		launch(args);
 	}
-public Main() {
-	classroomGUI=new ClassroomGUI(classroom)  ;
-	classroom=new Classroom()  ;
 	
-}
-	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("main-pane.fxml"));
+		
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main-pane.fxml"));
+		
+		fxmlLoader.setController(classroomgui);
+		
+		Parent root = fxmlLoader.load();
+		
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Classroom");
 		primaryStage.show();
+		
+		FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("login.fxml"));
+    	
+    	fxmlLoader1.setController(classroomgui);
+    	Parent loginPane = fxmlLoader1.load();
+    	
+		
+		//classroomgui.mainPane.getChildren().setAll(loginPane);
+	
 	}
-	public void change(Stage primaryStage) throws Exception{
+}
+
+	/*public void change(Stage primaryStage) throws Exception{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
 		
 		fxmlLoader.setController(this);    	
 		Parent loginPane = fxmlLoader.load();
 		
-		/*classroomGUI.mainPane.getChildren().clear();
-		classroomGUI.mainPane.setAll(loginPane);*/
-	}
-}
+		classroomGUI.mainPane.getChildren().clear();
+		classroomGUI.mainPane.setCenter(loginPane);*/
