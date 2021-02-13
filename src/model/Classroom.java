@@ -11,8 +11,8 @@ public class Classroom {
         Accounts=new ArrayList<>();
     }
 
-    public void addUserAccount(String user, String password, String photo, String gender, String career, String birth, String browser) {
-        UserAccount userAccount = new UserAccount(user, password,  photo,  gender,  career,  birth,  browser);
+    public void addUserAccount(String user, String password, String photo, String gender, String career, String birthday, String browser) {
+        UserAccount userAccount = new UserAccount(user, password,  photo,  gender,  career,  birthday,  browser);
         Accounts.add(userAccount);
     }
 

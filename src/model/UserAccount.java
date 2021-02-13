@@ -10,13 +10,13 @@ public class UserAccount {
     private String career;
     private String browser;
 
-    public UserAccount(String user, String password, String photo, String gender, String career, String birth, String browser) {
+    public UserAccount(String user, String password, String photo, String gender, String career, String birthday, String browser) {
         this.username=user;
         this.password=password;
         this.photo = photo;
         this.gender=gender;
         this.career=career;
-        this.birthday=birth;
+        this.birthday=birthday;
         this.browser=browser;
     }
 

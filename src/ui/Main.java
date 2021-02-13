@@ -22,7 +22,7 @@ public class Main extends Application{
 	
 	public void start(Stage primaryStage) throws Exception {
 		
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main-pane.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
 		
 		fxmlLoader.setController(classroomgui);
 		
@@ -32,19 +32,22 @@ public class Main extends Application{
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Classroom");
 		primaryStage.show();
-		
+	}
+}
+/*		
 		FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("login.fxml"));
     	
     	fxmlLoader1.setController(classroomgui);
     	Parent loginPane = fxmlLoader1.load();
     	
 		
-		//classroomgui.mainPane.getChildren().setAll(loginPane);
+		classroomgui.getMainPane.getChildren().Clear();
+		classroomgui.getMainPane.setCenter(loginPane);
 	
 	}
 }
 
-	/*public void change(Stage primaryStage) throws Exception{
+	public void change(Stage primaryStage) throws Exception{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
 		
 		fxmlLoader.setController(this);    	
